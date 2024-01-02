@@ -1,0 +1,4 @@
+http://localhost:8080/step02_basic/view/login.html
+
+http://localhost:8080/step02_basic/check
+http://localhost:8080/step02_basic/view/login.html?id=dev&pw=23
