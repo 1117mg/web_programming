@@ -16,6 +16,14 @@ import dept.dto.Dept;
 @WebServlet("/insertDept.do")
 public class InsertDeptController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 검증
+//		HttpSession session = request.getSession(false);
+//		if(session == null) {
+//			response.sendRedirect("login.jsp");
+//			return;
+//		}	
+				
+		
 		// 
 		String deptno = request.getParameter("deptno");
 		String dname = request.getParameter("dname");

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dept.dao.DeptDAO;
 import dept.dto.Dept;
@@ -15,6 +16,14 @@ import dept.dto.Dept;
 @WebServlet("/deleteDept.do")
 public class DeleteDeptController extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// 로그인 검증
+//		HttpSession session = request.getSession(false);
+//		if(session == null) {
+//			response.sendRedirect("login.jsp");
+//			return;
+//		}			
+		
 		// 부서 삭제 클릭 -> deptno DB -> 삭제 O -> getDeptList.jsp
 		// 							삭제 X -> 에러.jsp
 		

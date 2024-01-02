@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dept.dao.DeptDAO;
 import dept.dto.Dept;
@@ -15,6 +16,13 @@ import dept.dto.Dept;
 @WebServlet("/getDept.do")
 public class GetDeptController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 로그인 검증
+//		HttpSession session = request.getSession(false);
+//		if(session == null || session.getAttribute("userId") == null) {
+//			response.sendRedirect("login.jsp");
+//			return;
+//		}		
+		
 		/*
 		 * 시나리오
 		 * DB로부터 특정 부서 검색 후 반환

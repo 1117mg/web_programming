@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import common.util.DBUtil;
 import dept.dto.Dept;
@@ -24,11 +25,26 @@ public class EmpDAO {
 		try {
 			con = DBUtil.getConnection();
 			
-			// ?
+			//
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, empno);
+			pstmt.setString(2, ename);
+			
+			rset = pstmt.executeQuery();
 			
 			if(rset.next()) {
-				// ?
+				emp = new Emp(
+							rset.getInt(1),
+							rset.getString(2),
+							rset.getString(3),
+							rset.getInt(4),
+							rset.getDate(5),
+							rset.getFloat(6),
+							rset.getInt(7),						
+							rset.getInt(8));
 			}
+			
+			
 		}finally {
 			DBUtil.close(rset, pstmt, con);
 		}

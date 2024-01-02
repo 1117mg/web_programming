@@ -1,0 +1,36 @@
+[event]
+* https://docs.oracle.com/cd/B14099_19/web.1012/b14017/filters.htm#i1000379
+
+1. 필터 
+	* https://javaee.github.io/javaee-spec/javadocs/javax/servlet/Filter.html
+	- javax.servlet.Filter 인터페이스
+	- init(), doFilter(), destroy()
+	
+	- 클라이언트의 요청을 사전 처리하여 서블릿에 전달하고,서블릿의 응답을 사후 처리하여 클라이언트에 전달 하는 기능
+	- 필터 실행 순서 설정 가능(web.xml순서)
+	- 용도
+		- 사용자 인증
+		- 캐싱 필터
+		- 자원접근에 대한 로그처리
+		- 응답 데이터 변환 (HTML변환, 응답헤더 변환, 데이터 암호화 등)
+		- 공통 기능 수행 (Context Path설정, Download경로설정, Encoding설정 등)
+
+2. 리스너 
+	* https://javaee.github.io/javaee-spec/javadocs/javax/servlet/ServletContextListener.html#contextInitialized-javax.servlet.ServletContextEvent-
+	* https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/package-frame.html
+	* ...
+	
+	- 웹 애플리케이션의 주요 이벤트를 추적하여 효율적으로 자원 관리, 자동화 처리 등의 기능
+	* https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/EventListener.html
+	
+	- 객체의 생성/삭제
+					리스너									기능
+		ServletContextListener		:		ServletContext 객체의 생성과 삭제 이벤트 처리
+		HttpSessionListener			:		HttpSession 객체의 생성과 삭제 이벤트 처리
+		ServletRequestListener		:		HttpServletRequest 객체의 생성과 삭제 이벤트 처리
+	
+	- 객체에 정보 등록/삭제/대체
+				리스너										기능
+	ServletContextAttributeListener	:		ServletContext 객체에 정보 등록/삭제/대체 이벤트 처리
+	HttpSessionAttributeListener	:		HttpSession 객체에 정보 등록/삭제/대체 이벤트 처리
+	ServletRequestAttributeListener	:		HttpServletRequest 객체에 정보 등록/삭제/대체 이벤트 처리
